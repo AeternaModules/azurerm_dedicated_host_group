@@ -17,7 +17,7 @@ EOT
     name                        = string
     platform_fault_domain_count = number
     resource_group_name         = string
-    automatic_placement_enabled = optional(bool, false)
+    automatic_placement_enabled = optional(bool) # Default: false
     tags                        = optional(map(string))
     zone                        = optional(string)
   }))
