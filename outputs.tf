@@ -1,3 +1,7 @@
+output "dedicated_host_groups_id" {
+  description = "Map of id values across all dedicated_host_groups, keyed the same as var.dedicated_host_groups"
+  value       = { for k, v in azurerm_dedicated_host_group.dedicated_host_groups : k => v.id }
+}
 output "dedicated_host_groups_automatic_placement_enabled" {
   description = "Map of automatic_placement_enabled values across all dedicated_host_groups, keyed the same as var.dedicated_host_groups"
   value       = { for k, v in azurerm_dedicated_host_group.dedicated_host_groups : k => v.automatic_placement_enabled }
